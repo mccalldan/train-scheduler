@@ -1,3 +1,5 @@
+
+
 var config = {
     apiKey: "AIzaSyBfASD9-eLihPxW58yl3BBQTKjRORjHv_M",
     authDomain: "train-schedule-24436.firebaseapp.com",
@@ -8,11 +10,11 @@ var config = {
   };
  
 
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// 2. Button for adding trains
+// Button for adding trains
 $("#submit-btn").on("click", function(event) {
   event.preventDefault();
 
@@ -65,7 +67,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
 
   // Add each train's data into the table
-  $("#employee-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +
+  $("#train-table").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +
   trainTimeClean + "</td><td>" + trainFrequency + "</td>")
 
 });
